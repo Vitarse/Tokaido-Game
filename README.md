@@ -1,6 +1,4 @@
 # Tokaido-Game
-My first playable game inspired by Tokaido from Antoine Bauza (previously added to github last year on rocknnarthur's profile)
-
 Dans ce dossier figure différents sous dossiers et fichiers. Parmi les fichiers se trouvent les .bat soit des exécutables via invite de commande (CMD)
 
 VOUS DEVEZ IMPERATIVEMENT POSSEDER LES MODULES ET LOGICIELS SUIVANTS :
