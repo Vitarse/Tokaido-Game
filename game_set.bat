@@ -1,0 +1,2 @@
+python python\tokaido_pregame_menu.py
+exit

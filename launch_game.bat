@@ -1,0 +1,2 @@
+python python\tokaido_login_window.py
+exit

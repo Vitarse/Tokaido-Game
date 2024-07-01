@@ -1,0 +1,137 @@
+Personnages:
+
+Kinko le ronin / Pièces de départ : 7 / Capacité : Prix de chaque repas baissé de 1 unité  FAIT
+Hirotada le prêtre / Pièces de départ : 8 / Capacité : A chaque arrêt à un temple, donne 1 pièce provenant de la banque
+Yoshiyasu le fonctionnaire / Pièces de départ : 9 / Capacité : pioche 2 cartes Rencontre, conserve celle de son choix et replace la seconde au-dessous de la pioche (sans la montrer aux autres joueurs)
+Zen-emon le marchant / Pièces de départ : 6 / Capacité : peut acheter l’un des Souvenirs pour 1 seule pièce au lieu du prix indiqué, une fois par Echoppe.
+Mitsukuni le vieillard / Pièces de départ : 6 / Capacité : Chaque carte Source chaude et chaque carte Accomplissement rapporte 1 point supplémentaire
+Sasayakko la geisha / Pièces de départ : 5 / Capacité : Dans les villages, si la Geisha achète au moins 2 Souvenirs, le moins cher des 2 lui est offert.
+Umegae la saltimbanque / Pièces de départ : 5 / Capacité : gagne 1 point et 1 pièce lors de chaque rencontre. Précision : ce gain a lieu avant d’appliquer les effets de la carte Rencontre piochée.
+Chuubei le messager / Pièces de départ : 4 / Capacité : pioche 1 carte Rencontre lorsqu’il arrive dans chacun des 3 Relais intermédiaires (avant le Repas).
+Satsuki l'orpheline / Pièces de départ : 2 / Capacité : Lors de son arrivée au Relais, Satsuki reçoit aléatoirement et gratuitement 1 carte Repas. Précision : elle peut éventuellement renoncer à cette carte gratuite pour acheter un Repas selon la règle usuelle
+Hiroshige l'artiste / Pièces de départ : 3 / Capacité : prend 1 carte Panorama de son choix lorsqu’il arrive dans chacun des 3 Relais intermédiaires (avant le Repas)
+
+
+COMMENT FONCTIONNE LE BLIT? (à utiliser dans la main loop)
+    BLIT = blit + update display
+    UNBLIT = pas blit + update display
+
+CLASSES PLAYER = OK
+AFFICHER PIONS VOYAGEURS SUR PLATEAU = OK
+    POUR LES RELAIS: rajouter 0.1 à chaque voyageur
+AFFICHER HUD = EN cours
+    IDEE HUD INVENTAIRE DECKS: utiliser les listes de deck pour afficher en aligné chaque carte avec +position du précédent en utilisant un for in deck
+
+
+JOUEUR JOUE -> HUD DE SA COULEUR + STATS
+
+COORDONNEES CASES:
+1 : [135, 400, 123, 408]
+2 : [215, 350, 203, 298]
+3 : [265, 350, 243, 468]
+4 : [315, 330, 303, 328]
+5 : [375, 330, 363, 458]
+6 : [435, 350, 423, 308]
+7 : [495, 370, 483, 538]
+8 : [555, 390, 543, 348]
+9 : [605, 420, 593, 548]
+10 : [665, 420, 653, 368]
+11 : [725, 400, 713, 518]
+12 : [775, 370, 763, 318]
+13 : [825, 320, 813, 438]
+14 : [845, 280, 833, 278]
+15 : [925, 320, 913, 318]
+16 : [95, 290, 83, 418]
+17 : [145, 320, 123, 318]
+18 : [185, 340, 173, 508]
+19 : [235, 360, 223, 318]
+20 : [275, 390, 263, 558]
+21 : [345, 420, 323, 378]
+22 : [375, 450, 363, 568]
+23 : [435, 490, 413, 448]
+24 : [475, 510, 463, 628]
+25 : [525, 500, 513, 458]
+26 : [575, 500, 563, 628]
+27 : [625, 490, 613, 498]
+28 : [705, 440, 693, 538]
+29 : [105, 480, 93, 598]
+30 : [145, 470, 133, 468]
+31 : [195, 470, 183, 638]
+32 : [245, 460, 233, 458]
+33 : [295, 450, 283, 628]
+34 : [345, 440, 333, 438]
+35 : [405, 400, 393, 578]
+36 : [445, 380, 433, 388]
+37 : [495, 370, 483, 548]
+38 : [535, 350, 523, 308]
+39 : [575, 330, 563, 448]
+40 : [615, 300, 603, 298]
+41 : [665, 290, 653, 468]
+42 : [745, 230, 733, 338]
+43 : [265, 270, 253, 268]
+44 : [305, 260, 293, 428]
+45 : [355, 240, 343, 238]
+46 : [405, 220, 383, 388]
+47 : [445, 200, 423, 198]
+48 : [485, 180, 473, 358]
+49 : [545, 160, 523, 108]
+50 : [595, 160, 583, 278]
+51 : [645, 150, 633, 148]
+52 : [695, 160, 683, 338]
+53 : [755, 160, 743, 108]
+54 : [825, 120, 803, 238]
+55 : [905, 110, 893, 118]
+
+DOUBLE CASES + RELAIS
+1 place 2 : [135, 440]
+1 place 3 : [135, 480]
+1 place 4 : [135, 520]
+1 place 5 : [135, 560]
+
+2 place 2 : [215, 300]
+6 place 2 : [435, 300]
+7 place 2 : [495, 420]
+8 place 2 : [555, 340]
+10 place 2 : [665, 370]
+12 place 2 : [775, 320]
+
+15 place 2 : [925, 360]
+15 place 3 : [925, 400]
+15 place 4 : [925, 440]
+15 place 5 : [925, 480]
+
+18 place 2 : [185, 390]
+19 place 2 : [235, 310]
+20 place 2 : [275, 440]
+21 place 2 : [345, 370]
+23 place 2 : [435, 440]
+25 place 2 : [525, 450]
+
+28 place 2 : [705, 400]
+28 place 3 : [705, 360]
+28 place 4 : [705, 320]
+28 place 5 : [705, 280]
+
+31 place 2 : [195, 520]
+33 place 2 : [295, 500]
+35 place 2 : [405, 450]
+37 place 2 : [495, 420]
+38 place 2 : [535, 300]
+41 place 2 : [665, 340]
+
+42 place 2 : [745, 190]
+42 place 3 : [745, 150]
+42 place 4 : [745, 110]
+42 place 5 : [745, 70]
+
+44 place 2 : [305, 310]
+46 place 2 : [405, 270]
+48 place 2 : [485, 230]
+49 place 2 : [545, 110]
+52 place 2 : [695, 210]
+53 place 2 : [755, 110]
+
+55 place 2 : [905, 150]
+55 place 3 : [905, 190]
+55 place 4 : [905, 230]
+55 place 5 : [905, 270]
